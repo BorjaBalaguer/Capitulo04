@@ -2,26 +2,19 @@ package com.company;
 import java.util.Scanner;
 
 public class Main {
+    /**
+     *
+     * @param args
+     */
 
-    public static void main(String[] args) {
-        Scanner teclado=new Scanner(System.in);
-        System.out.println("Introduce el número para la criba de Erastótenes:");
-        int dato=teclado.nextInt();
-        int vector[]=new int[dato];
-        System.out.println("\nVector inicial hasta :"+dato);
-        for (int i = 0; i < vector.length; i++) {
-            if (i%10==0) System.out.println();
-            System.out.print(i+1+"\t");
-        }
-        vector=generarPrimos(dato);
-        System.out.println("\nVector de primos hasta:"+dato);
-        for (int i = 0; i < vector.length; i++) {
-            if (i%10==0) System.out.println();
-            System.out.print(vector[i]+"\t");
-        }
-    }
 
     // Generar números primos de 1 a max
+
+    /**
+     *
+     * @param max
+     * @return
+     */
     public static int[] generarPrimos (int max)
     {
         int i,j;
@@ -59,6 +52,29 @@ public class Main {
         } else { // max < 2
             return new int[0];
             // Vector vacío
+        }
+    }
+
+    public static void main(String[] args) {
+        // Llamamos al teclado y pedimos la variable
+        Scanner teclado=new Scanner(System.in);
+        System.out.println("Introduce el número para la criba de Erastótenes:");
+        /**
+         * @dato es la variable que introduce el usuario
+         * @vector es el array creado a parir del dato
+         */
+        int dato=teclado.nextInt();
+        int vector[]=new int[dato];
+        System.out.println("\nVector inicial hasta :"+dato);
+        for (int i = 0; i < vector.length; i++) {
+            if (i%10==0) System.out.println();
+            System.out.print(i+1+"\t");
+        }
+        vector=generarPrimos(dato);
+        System.out.println("\nVector de primos hasta:"+dato);
+        for (int i = 0; i < vector.length; i++) {
+            if (i%10==0) System.out.println();
+            System.out.print(vector[i]+"\t");
         }
     }
 }

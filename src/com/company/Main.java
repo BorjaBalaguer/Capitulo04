@@ -7,9 +7,7 @@ public class Main {
      * @param args
      */
 
-
     // Generar números primos de 1 a max
-
     /**
      *
      * @param max
@@ -55,26 +53,42 @@ public class Main {
         }
     }
 
-    public static void main(String[] args) {
-        // Llamamos al teclado y pedimos la variable
-        Scanner teclado=new Scanner(System.in);
-        System.out.println("Introduce el número para la criba de Erastótenes:");
-        /**
-         * @dato es la variable que introduce el usuario
-         * @vector es el array creado a parir del dato
-         */
-        int dato=teclado.nextInt();
-        int vector[]=new int[dato];
-        System.out.println("\nVector inicial hasta :"+dato);
+    //Metodos
+    private static void VectorHasta(int[] vector) {
         for (int i = 0; i < vector.length; i++) {
             if (i%10==0) System.out.println();
             System.out.print(i+1+"\t");
         }
-        vector=generarPrimos(dato);
-        System.out.println("\nVector de primos hasta:"+dato);
+    }
+
+    private static void ImprimirVector(int[] vector) {
         for (int i = 0; i < vector.length; i++) {
             if (i%10==0) System.out.println();
             System.out.print(vector[i]+"\t");
         }
+    }
+
+    public static void main(String[] args) {
+        // Llamamos al teclado y pedimos la variable
+        Scanner teclado=new Scanner(System.in);
+        System.out.println("Introduce el número para la criba de Erastótenes:");
+
+
+        /**
+         * @dato es la variable que introduce el usuario
+         * @vector es el array creado a parir del dato
+         */
+
+        int dato=teclado.nextInt();
+        int vector[]=new int[dato];
+
+
+        System.out.println("\nVector inicial hasta :"+dato);
+        VectorHasta(vector);
+        vector=generarPrimos(dato);
+
+
+        System.out.println("\nVector de primos hasta:"+dato);
+        ImprimirVector(vector);
     }
 }
